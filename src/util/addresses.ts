@@ -109,6 +109,12 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.WORLDCHAIN].quoterAddress, // TODO: deploy view-only-quoter to worldchain
   [ChainId.ASTROCHAIN_SEPOLIA]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.ASTROCHAIN_SEPOLIA].quoterAddress, // TODO: deploy view-only-quoter to astrochain
+  [ChainId.BIT_TORRENT_MAINNET]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].quoterAddress,
+  [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].quoterAddress,
+  [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].quoterAddress,
+  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].quoterAddress,
+  [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].quoterAddress,
 };
 
 export const PROTOCOL_V4_QUOTER_ADDRESSES: AddressMap = {

@@ -458,6 +458,16 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_WORLDCHAIN!;
     case ChainId.ASTROCHAIN_SEPOLIA:
       return process.env.JSON_RPC_PROVIDER_ASTROCHAIN_SEPOLIA!;
+    case ChainId.BIT_TORRENT_MAINNET:
+      return process.env.JSON_RPC_PROVIDER_BIT_TORRENT_MAINNET!;
+    case ChainId.FANTOM:
+      return process.env.JSON_RPC_PROVIDER_FANTOM!;
+    case ChainId.EON:
+      return process.env.JSON_RPC_PROVIDER_EON!;
+    case ChainId.BERA_TESTNET:
+      return process.env.JSON_RPC_PROVIDER_BERA_TESTNET!;
+    case ChainId.SONIC_TESTNET:
+      return process.env.JSON_RPC_PROVIDER_SONIC_TESTNET!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }

@@ -56,6 +56,9 @@ const FEE_DETECTOR_ADDRESS = (chainId: ChainId) => {
       return '0xbc708B192552e19A088b4C4B8772aEeA83bCf760';
     case ChainId.ASTROCHAIN_SEPOLIA:
       return '0xbc708B192552e19A088b4C4B8772aEeA83bCf760';
+    case ChainId.FANTOM:
+      return '0xb048Ffea30fe892Ad8Fd61256936472205d66689';
+    
     default:
       // just default to mainnet contract
       return '0xbc708B192552e19A088b4C4B8772aEeA83bCf760';

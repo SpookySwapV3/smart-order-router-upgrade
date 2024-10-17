@@ -3,11 +3,12 @@ import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import axios from 'axios';
 
+import { ID_TO_NETWORK_NAME, SPOOKY_CHAINS } from '../util';
 import { log } from '../util/log';
 
 import { V2SubgraphPool } from './v2/subgraph-provider';
 import { V3SubgraphPool } from './v3/subgraph-provider';
-import { ID_TO_NETWORK_NAME, SPOOKY_CHAINS } from '../util';
+
 
 /**
  * Gets subgraph pools from a URI. The URI shoudl contain a JSON
@@ -24,9 +25,11 @@ export function resolveURISubgraph(chainId: ChainId, version: "v2" | "v3" | "v4"
   const chainName = ID_TO_NETWORK_NAME(chainId);
   const uniswapURIFormat = `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/${version}/${chainName}.json`
   const spookyURIFormat = `https://spooky.fi/v1/pools/${version}/${chainName}.json`
+  const localURIFormat = `http://localhost:3001/v1/pools/${version}/${chainId}.json`
+  const useLocal = true
 
   if(SPOOKY_CHAINS.includes(chainId)) {
-    return spookyURIFormat;
+    return useLocal ? localURIFormat : spookyURIFormat;
   }
 
   return uniswapURIFormat

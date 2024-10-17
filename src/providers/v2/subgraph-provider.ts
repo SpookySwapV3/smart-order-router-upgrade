@@ -36,11 +36,11 @@ type RawV2SubgraphPool = {
   reserveUSD: string;
 };
 
+const FANTOM_SUBGRAPH = `https://gateway-arbitrum.network.thegraph.com/api/${process.env.TEMP_API_KEY}/subgraphs/id/HyhMfT7gehNHMBmFiExqeg3pDtop9UikjvBPfAXT3b21`
 const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
-  [ChainId.FANTOM]:
-    `https://gateway-arbitrum.network.thegraph.com/api/843cb09d23c0017e2a57032663d62e49/subgraphs/id/HyhMfT7gehNHMBmFiExqeg3pDtop9UikjvBPfAXT3b21`,
+  [ChainId.FANTOM]: FANTOM_SUBGRAPH,
   [ChainId.BIT_TORRENT_MAINNET]:
     'http://btt-spooky.paintswap.finance/subgraphs/name/spookyswapv2-upgraded/',
   [ChainId.EON]:

@@ -35,6 +35,7 @@ export type V3RawSubgraphPool = {
   totalValueLockedUSDUntracked: string;
 };
 
+const FANTOM_SUBGRAPH = `https://gateway-arbitrum.network.thegraph.com/api/${process.env.TEMP_API_KEY}/subgraphs/id/6WBxx3gYia4oCLsYMFTZs6HLEnEqVMdpeZDCABnM1tj2`
 const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
@@ -62,8 +63,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://gateway-arbitrum.network.thegraph.com/api/0ae45f0bf40ae2e73119b44ccd755967/subgraphs/id/2LHovKznvo8YmKC9ZprPjsYAZDCc4K5q4AYz8s3cnQn1',
   [ChainId.BIT_TORRENT_MAINNET]:
     'https://btt-spooky.paintswap.finance/subgraphs/name/ianlapham/uniswap-v3',
-  [ChainId.FANTOM]:
-    `https://gateway-arbitrum.network.thegraph.com/api/843cb09d23c0017e2a57032663d62e49/subgraphs/id/6WBxx3gYia4oCLsYMFTZs6HLEnEqVMdpeZDCABnM1tj2`,
+  [ChainId.FANTOM]: FANTOM_SUBGRAPH,
   [ChainId.EON]:
     'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/eon-spooky-v3',
   [ChainId.BERA_TESTNET]: 'https://api.goldsky.com/api/public/project_cl9frwjqo1lwz0hvkb5sb2xo8/subgraphs/spooky-beratestnetv3/1.0.0/gn',

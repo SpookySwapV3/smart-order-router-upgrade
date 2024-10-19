@@ -247,6 +247,116 @@ Total ticks crossed: 7
 ./bin/cli quote --tokenIn 0x4200000000000000000000000000000000000006 --tokenOut 0x31d0220469e10c4E71834a79b1f276d740d3768F --amount 0.1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 1301
 ```
 
+## Bittorrent Mainnet
+
+```
+./bin/cli quote --tokenIn 0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199
+```
+
+Hop Quote ftm_e to link_e
+
+```
+./bin/cli quote --tokenIn 0xAD9A21FF0c9d854cA8C1360AF28D4fcbDaC53B4F --tokenOut 0xfd3b093aB6bD4F40810f19e5fF822ac8Cc7e3184 --amount 10000 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 199 --debug
+```
+
+V3 Hop Quote USDC_e => ftm => SPKT
+
+```
+./bin/cli quote --tokenIn 0xae17940943ba9440540940db0f1877f101d39e8b --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199 --debug
+```
+
+Mixed Routing Test
+```
+./bin/cli quote --tokenIn 0xae17940943ba9440540940db0f1877f101d39e8b --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 199 --debug
+```
+
+
+## Fantom Mainnet
+
+```
+./bin/cli quote --tokenIn 0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83 --tokenOut 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 250
+```
+
+Hop Quote USDC_LZ -> WETH_LZ
+
+```
+./bin/cli quote --tokenIn 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --tokenOut 0x695921034f0387eAc4e11620EE91b1b15A6A09fE --amount 1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 250 --debug
+
+```
+
+v3 Hop Quote USDC_LZ => WETH_LZ
+
+```
+./bin/cli quote --tokenIn 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --tokenOut 0x695921034f0387eAc4e11620EE91b1b15A6A09fE --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 250 --debug
+
+```
+FTM => USDC_LZ
+```
+./bin/cli quote --tokenIn 0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83 --tokenOut 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --amount 1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 250 --debug
+
+```
+
+
+## EON Mainnet
+
+quote USDC_LZ -> WZEN
+```
+./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0xF5cB8652a84329A2016A386206761f455bCEDab6  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 7332
+```
+
+v3 hop quote USDC_LZ -> lzWBTC
+```
+./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0x1d7fb99AED3C365B4DEf061B7978CE5055Dfc1e7  --amount .1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 7332
+```
+
+```
+./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0x1d7fb99AED3C365B4DEf061B7978CE5055Dfc1e7  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 7332 --debug
+```
+
+## Bera Testnet
+
+quote v2 WBERA -> USDC
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 80084
+```
+quote v2 Hop WBERA -> Fake 
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 80084
+```
+
+
+quote v3 WBERA -> USDC
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 80084
+```
+
+quote v3 Hop WBERA -> Fake 
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 80084
+```
+
+quote mixed router
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 80084
+```
+
+## Sonic Testnet
+
+quote v2 WSonic -> CORAL
+```
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 64165 --debug
+```
+
+```
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 64165 --debug
+```
+
+```
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 64165 --debug
+```
+
+
+
 ## Adding a new Chain
 
 The main components to complete are:

@@ -1,10 +1,12 @@
-import { Protocol } from '@uniswap/router-sdk';
+import { ADDRESS_ZERO, Protocol } from '@uniswap/router-sdk';
+import { TPool } from '@uniswap/router-sdk/dist/utils/TPool';
 import { Currency, Percent } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import { Pool as V3Pool } from '@uniswap/v3-sdk';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
 import _ from 'lodash';
 
+import { CachedRoutes } from '../providers';
 import {
   AlphaRouterConfig,
   RouteWithValidQuote,
@@ -13,9 +15,7 @@ import { MixedRoute, SupportedRoutes } from '../routers/router';
 
 import { V3_CORE_FACTORY_ADDRESSES } from './addresses';
 
-import { TPool } from '@uniswap/router-sdk/dist/utils/TPool';
 import { CurrencyAmount } from '.';
-import { CachedRoutes } from '../providers';
 
 export const routeToTokens = (route: SupportedRoutes): Currency[] => {
   switch (route.protocol) {

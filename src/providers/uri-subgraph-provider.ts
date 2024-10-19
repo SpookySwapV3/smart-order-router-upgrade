@@ -7,6 +7,7 @@ import { log } from '../util/log';
 
 import { V2SubgraphPool } from './v2/subgraph-provider';
 import { V3SubgraphPool } from './v3/subgraph-provider';
+import { ID_TO_NETWORK_NAME, SPOOKY_CHAINS } from '../util';
 
 /**
  * Gets subgraph pools from a URI. The URI shoudl contain a JSON
@@ -17,6 +18,20 @@ import { V3SubgraphPool } from './v3/subgraph-provider';
  * @class URISubgraphProvider
  * @template TSubgraphPool
  */
+
+
+export function resolveURISubgraph(chainId: ChainId, version: "v2" | "v3" | "v4") {
+  const chainName = ID_TO_NETWORK_NAME(chainId);
+  const uniswapURIFormat = `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/${version}/${chainName}.json`
+  const spookyURIFormat = `https://spooky.fi/v1/pools/${version}/${chainName}.json`
+
+  if(SPOOKY_CHAINS.includes(chainId)) {
+    return spookyURIFormat;
+  }
+
+  return uniswapURIFormat
+}
+
 export class URISubgraphProvider<
   TSubgraphPool extends V2SubgraphPool | V3SubgraphPool
 > {

@@ -735,6 +735,142 @@ export const USDC_ASTROCHAIN_SEPOLIA = new Token(
   'USDC Token'
 );
 
+
+export const WBTT_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C',
+  18,
+  'WBTT',
+  'Wrapped Bit Torrent'
+);
+
+export const USDC_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0xAE17940943BA9440540940DB0F1877f101D39e8b',
+  6,
+  'USDC_e',
+  'USD Coin (ETH)'
+);
+
+//TODO: add Dai Address
+export const DAI_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0xAE17940943BA9440540940DB0F1877f101D39e8b',
+  6,
+  'USDC_e',
+  'USD Coin (ETH)'
+);
+
+export const WBTC_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x9888221fE6B5A2ad4cE7266c7826D2AD74D40CcF',
+  8,
+  'WBTC_e',
+  'Wrapped Bitcoin (ETH)'
+);
+
+export const USDT_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0xdB28719F7f938507dBfe4f0eAe55668903D34a15',
+  6,
+  'USDT_t',
+  'USD Tether (Tron)'
+);
+
+export const ETH_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x1249C65AfB11D179FFB3CE7D4eEDd1D9b98AD006',
+  18,
+  'ETH',
+  'Ether'
+);
+
+export const USDC_AXL_FANTOM = new Token(
+  ChainId.FANTOM,
+  '0x1B6382DBDEa11d97f24495C9A90b7c88469134a4',
+  6,
+  'USDC_AXL',
+  'axUSD Coin (FTM)'
+);
+export const USDC_LZ_FANTOM = new Token(
+  ChainId.FANTOM,
+  '0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf',
+  6,
+  'USDC_LZ',
+  'LzUSD Coin (FTM)'
+);
+
+//TODO: Add Dai Address
+export const DAI_LZ_FANTOM = new Token(
+  ChainId.FANTOM,
+  '0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf',
+  6,
+  'USDC_LZ',
+  'LzUSD Coin (FTM)'
+);
+
+export const USDT_LZ_FANTOM = new Token(
+  ChainId.FANTOM,
+  '0xcc1b99dDAc1a33c201a742A1851662E87BC7f22C',
+  6,
+  'USDT_LZ',
+  'LzUSDT (FTM)'
+);
+
+export const USDC_LZ_EON = new Token(
+  ChainId.EON,
+  '0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53',
+  6,
+  'USDC',
+  'USD Coin (EON)'
+);
+
+//TODO: Add Dai Address
+export const DAI_LZ_EON = new Token(
+  ChainId.EON,
+  '0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53',
+  6,
+  'USDC',
+  'USD Coin (EON)'
+);
+
+export const USDC_BERA_TEST = new Token(
+  ChainId.BERA_TESTNET,
+  '0x153A59e72BcfaF9Bdb8d3864945D44595856A970',
+  6,
+  'USDC',
+  'USD Coin (Bera Test)'
+);
+
+//TODO: Add Dai Address
+
+export const DAI_BERA_TEST = new Token(
+  ChainId.BERA_TESTNET,
+  '0x153A59e72BcfaF9Bdb8d3864945D44595856A970',
+  6,
+  'USDC',
+  'USD Coin (Bera Test)'
+);
+
+
+export const USDC_SONIC_TEST = new Token(
+  ChainId.SONIC_TESTNET,
+  '0xaf93888cbd250300470a1618206e036e11470149',
+  18,
+  'CORAL',
+  'Coral '
+);
+
+//TODO: add Dai Address
+export const DAI_SONIC_TEST = new Token(
+  ChainId.SONIC_TESTNET,
+  '0xaf93888cbd250300470a1618206e036e11470149',
+  18,
+  'CORAL',
+  'Coral '
+);
+
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
@@ -942,6 +1078,16 @@ export const DAI_ON = (chainId: ChainId): Token => {
       return DAI_AVAX;
     case ChainId.ZKSYNC:
       return DAI_ZKSYNC;
+    // case ChainId.BIT_TORRENT_MAINNET:
+    //   return DAI_BITTORRENT
+    // case ChainId.FANTOM:
+    //   return DAI_LZ_FANTOM
+    // case ChainId.EON:
+    //   return DAI_LZ_EON
+    // case ChainId.BERA_TESTNET:
+    //   return DAI_BERA_TEST
+    // case ChainId.SONIC_TESTNET:
+    //   return DAI_SONIC_TEST
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
@@ -963,6 +1109,16 @@ export const USDT_ON = (chainId: ChainId): Token => {
       return USDT_ARBITRUM;
     case ChainId.BNB:
       return USDT_BNB;
+    case ChainId.BIT_TORRENT_MAINNET:
+      return USDT_BITTORRENT
+    case ChainId.FANTOM:
+      return USDT_LZ_FANTOM
+    // case ChainId.EON:
+    //   return USDT_EON
+    // case ChainId.BERA_TESTNET:
+    //   return DAI_BERA_TEST
+    // case ChainId.SONIC_TESTNET:
+    //   return DAI_SONIC_TEST
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
@@ -1012,6 +1168,16 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_WORLDCHAIN;
     case ChainId.ASTROCHAIN_SEPOLIA:
       return USDC_ASTROCHAIN_SEPOLIA;
+    case ChainId.BIT_TORRENT_MAINNET:
+      return USDT_BITTORRENT;
+    case ChainId.FANTOM:
+      return USDC_LZ_FANTOM;
+    case ChainId.EON:
+      return USDC_LZ_EON;
+    case ChainId.BERA_TESTNET:
+      return USDC_BERA_TEST;
+    case ChainId.SONIC_TESTNET:
+      return USDC_SONIC_TEST;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

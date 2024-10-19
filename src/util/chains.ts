@@ -28,6 +28,11 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.ZKSYNC,
   ChainId.WORLDCHAIN,
   ChainId.ASTROCHAIN_SEPOLIA,
+  ChainId.BIT_TORRENT_MAINNET,
+  ChainId.FANTOM,
+  ChainId.EON,
+  ChainId.BERA_TESTNET,
+  ChainId.SONIC_TESTNET,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -40,6 +45,13 @@ export const V2_SUPPORTED = [
   ChainId.BASE,
   ChainId.BNB,
   ChainId.AVALANCHE,
+  ChainId.WORLDCHAIN,
+  ChainId.ASTROCHAIN_SEPOLIA,
+  ChainId.BIT_TORRENT_MAINNET,
+  ChainId.FANTOM,
+  ChainId.EON,
+  ChainId.BERA_TESTNET,
+  ChainId.SONIC_TESTNET,
 ];
 
 export const V4_SUPPORTED = [ChainId.SEPOLIA];
@@ -48,6 +60,11 @@ export const MIXED_SUPPORTED = [
   ChainId.MAINNET,
   ChainId.SEPOLIA,
   ChainId.GOERLI,
+  ChainId.BIT_TORRENT_MAINNET,
+  ChainId.FANTOM,
+  ChainId.EON,
+  ChainId.BERA_TESTNET,
+  ChainId.SONIC_TESTNET
 ];
 
 export const HAS_L1_FEE = [
@@ -124,6 +141,16 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.WORLDCHAIN;
     case 1301:
       return ChainId.ASTROCHAIN_SEPOLIA;
+    case 199:
+      return ChainId.BIT_TORRENT_MAINNET;
+    case 250:
+      return ChainId.FANTOM;
+    case 7332:
+      return ChainId.EON;
+    case 80084:
+      return ChainId.BERA_TESTNET;
+    case 64165:
+      return ChainId.SONIC_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -154,6 +181,11 @@ export enum ChainName {
   ZKSYNC = 'zksync-mainnet',
   WORLDCHAIN = 'worldchain-mainnet',
   ASTROCHAIN_SEPOLIA = 'astrochain-sepolia',
+  BIT_TORRENT_MAINNET = 'bit-torrent-mainnet',
+  FANTOM = 'fantom',
+  EON = 'eon-mainnet',
+  BERA_TESTNET = 'bera-testnet',
+  SONIC_TESTNET = 'sonic-testnet',
 }
 
 export enum NativeCurrencyName {
@@ -165,6 +197,11 @@ export enum NativeCurrencyName {
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
+  BIT_TORRENT = 'BTT',
+  FANTOM = 'FTM',
+  EON = 'ZEN',
+  BERA_TESTNET = 'BERA',
+  SONIC_TESTNET = 'S'
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -258,7 +295,24 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.BIT_TORRENT_MAINNET]: [
+    'BTT',
+    'BITTORRENT',
+    //'0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    '0x0000000000000000000000000000000000001010',
+  ],
+  [ChainId.FANTOM]: [
+    'FTM',
+    'FANTOM',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //0x000000000000000000000000000000000000dEaD
+  ],
+  [ChainId.EON]: ['EON', 'EON', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.BERA_TESTNET]: ['BERA', 'BERA', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.SONIC_TESTNET]: ['S', 'SONIC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
 };
+
+export const SPOOKY_CHAINS = [ChainId.FANTOM, ChainId.EON, ChainId.BIT_TORRENT_MAINNET, ChainId.SONIC_TESTNET, ChainId.BERA_TESTNET]
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.MAINNET]: NativeCurrencyName.ETHER,
@@ -284,6 +338,11 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.ZKSYNC]: NativeCurrencyName.ETHER,
   [ChainId.WORLDCHAIN]: NativeCurrencyName.ETHER,
   [ChainId.ASTROCHAIN_SEPOLIA]: NativeCurrencyName.ETHER,
+  [ChainId.BIT_TORRENT_MAINNET]: NativeCurrencyName.BIT_TORRENT,
+  [ChainId.FANTOM]: NativeCurrencyName.FANTOM,
+  [ChainId.EON]: NativeCurrencyName.EON,
+  [ChainId.BERA_TESTNET]: NativeCurrencyName.BERA_TESTNET,
+  [ChainId.SONIC_TESTNET]: NativeCurrencyName.SONIC_TESTNET,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -336,6 +395,16 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.WORLDCHAIN;
     case 1301:
       return ChainName.ASTROCHAIN_SEPOLIA;
+    case 199:
+      return ChainName.BIT_TORRENT_MAINNET;
+    case 250:
+      return ChainName.FANTOM;
+    case 7332:
+      return ChainName.EON;
+    case 80084:
+      return ChainName.BERA_TESTNET;
+    case 64165:
+      return ChainName.SONIC_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -579,6 +648,41 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     'WETH',
     'Wrapped Ether'
   ),
+  [ChainId.BIT_TORRENT_MAINNET]: new Token(
+    ChainId.BIT_TORRENT_MAINNET,
+    '0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C',
+    18,
+    'WBTT',
+    'Wrapped Bit torrent'
+  ),
+  [ChainId.FANTOM]: new Token(
+    ChainId.FANTOM,
+    '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+    18,
+    'WFTM',
+    'Wrapped Fantom'
+  ),
+  [ChainId.EON]: new Token(
+    ChainId.EON,
+    '0xF5cB8652a84329A2016A386206761f455bCEDab6',
+    18,
+    'WZEN',
+    'Wrapped ZEN'
+  ),
+  [ChainId.BERA_TESTNET]: new Token(
+    ChainId.BERA_TESTNET,
+    '0x7507c1dc16935B82698e4C63f2746A2fCf994dF8',
+    18,
+    'WBERA',
+    'Wrapped Bera'
+  ),
+  [ChainId.SONIC_TESTNET]: new Token(
+    ChainId.SONIC_TESTNET,
+    '0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd',
+    18,
+    'WS',
+    'Wrapped Sonic'
+  )
 };
 
 function isMatic(
@@ -729,6 +833,125 @@ class AvalancheNativeCurrency extends NativeCurrency {
   }
 }
 
+function isBittorrent(chainId: number): chainId is ChainId.BIT_TORRENT_MAINNET {
+  return chainId === ChainId.BIT_TORRENT_MAINNET;
+}
+
+class BitTorrentNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isBittorrent(this.chainId)) throw new Error('Not bittorrent');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isBittorrent(chainId)) throw new Error('Not Bittorrent');
+    super(chainId, 18, 'BTT', 'Bit torrent');
+  }
+}
+
+function isFantom(chainId: number): chainId is ChainId.FANTOM {
+  return chainId === ChainId.FANTOM;
+}
+
+function isBeraTestnet(chainId: number): chainId is ChainId.BERA_TESTNET {
+  return chainId === ChainId.BERA_TESTNET
+}
+
+function isSonicTestnet(chainId: number): chainId is ChainId.SONIC_TESTNET {
+  return chainId === ChainId.SONIC_TESTNET
+}
+
+class FantomNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isFantom(this.chainId)) throw new Error('Not bittorrent');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isFantom(chainId)) throw new Error('Not Bittorrent');
+    super(chainId, 18, 'FTM', 'Fantom');
+  }
+}
+
+function isEon(chainId: number): chainId is ChainId.EON {
+  return chainId === ChainId.EON;
+}
+class EonNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isEon(this.chainId)) throw new Error('Not Horizen Eon');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isEon(chainId)) throw new Error('Not Horizen Eon');
+    super(chainId, 18, 'ZEN', 'Zen');
+  }
+}
+
+class BeraTestnetNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isBeraTestnet(this.chainId)) throw new Error('Not Berachain Testnet');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isBeraTestnet(chainId)) throw new Error('Not Berachain Testnet');
+    super(chainId, 18, 'BERA', 'Bera');
+  }
+}
+
+class SonicTestnetNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isSonicTestnet(this.chainId)) throw new Error('Not Sonic Testnet');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isSonicTestnet(chainId)) throw new Error('Not Sonic Testnet');
+    super(chainId, 18, 'S', 'Sonic');
+  }
+}
+
 export class ExtendedEther extends Ether {
   public get wrapped(): Token {
     if (this.chainId in WRAPPED_NATIVE_CURRENCY) {
@@ -766,6 +989,16 @@ export function nativeOnChain(chainId: number): NativeCurrency {
     cachedNativeCurrency[chainId] = new BnbNativeCurrency(chainId);
   } else if (isAvax(chainId)) {
     cachedNativeCurrency[chainId] = new AvalancheNativeCurrency(chainId);
+  } else if (isBittorrent(chainId)) {
+    cachedNativeCurrency[chainId] = new BitTorrentNativeCurrency(chainId);
+  } else if (isFantom(chainId)) {
+    cachedNativeCurrency[chainId] = new FantomNativeCurrency(chainId);
+  } else if (isEon(chainId)) {
+    cachedNativeCurrency[chainId] = new EonNativeCurrency(chainId);
+  } else if (isBeraTestnet(chainId)) {
+    cachedNativeCurrency[chainId] = new BeraTestnetNativeCurrency(chainId);
+  } else if (isSonicTestnet(chainId)) {
+    cachedNativeCurrency[chainId] = new SonicTestnetNativeCurrency(chainId);
   } else {
     cachedNativeCurrency[chainId] = ExtendedEther.onChain(chainId);
   }

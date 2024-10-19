@@ -40,6 +40,7 @@ import {
   NodeJSCache,
   OnChainGasPriceProvider,
   OnChainQuoteProvider,
+  resolveURISubgraph,
   Simulator,
   StaticV2SubgraphProvider,
   StaticV3SubgraphProvider,
@@ -821,6 +822,11 @@ export class AlphaRouter
             (_) => BLOCK_NUMBER_CONFIGS[chainId]!
           );
           break;
+        case ChainId.BIT_TORRENT_MAINNET:
+        case ChainId.FANTOM:
+        case ChainId.EON:
+        case ChainId.BERA_TESTNET:
+        case ChainId.SONIC_TESTNET:
         default:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
@@ -900,7 +906,7 @@ export class AlphaRouter
           chainId,
           new URISubgraphProvider(
             chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v2/${chainName}.json`,
+            resolveURISubgraph(chainId, 'v2'),
             undefined,
             0
           ),
@@ -918,7 +924,7 @@ export class AlphaRouter
           chainId,
           new URISubgraphProvider(
             chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v3/${chainName}.json`,
+            resolveURISubgraph(chainId, 'v3'),
             undefined,
             0
           ),
@@ -938,7 +944,7 @@ export class AlphaRouter
           chainId,
           new URISubgraphProvider(
             chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v4/${chainName}.json`,
+            resolveURISubgraph(chainId, 'v4'),
             undefined,
             0
           ),

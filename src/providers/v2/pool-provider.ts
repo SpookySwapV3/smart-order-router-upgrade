@@ -258,6 +258,7 @@ export class V2PoolProvider implements IV2PoolProvider {
       return { poolAddress: cachedAddress, token0, token1 };
     }
 
+    // Research whether we need to pass the factory and init hash now that its resolved in the v2 sdk automatically
     const poolAddress = Pair.getAddress(token0, token1);
 
     this.POOL_ADDRESS_CACHE[cacheKey] = poolAddress;

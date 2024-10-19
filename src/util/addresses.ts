@@ -47,6 +47,12 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.WORLDCHAIN].v3CoreFactoryAddress,
   [ChainId.ASTROCHAIN_SEPOLIA]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.ASTROCHAIN_SEPOLIA].v3CoreFactoryAddress,
+  [ChainId.BIT_TORRENT_MAINNET]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].v3CoreFactoryAddress,
+  [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].v3CoreFactoryAddress,
+  [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].v3CoreFactoryAddress,
+  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].v3CoreFactoryAddress,
+  [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -76,6 +82,12 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.WORLDCHAIN].quoterAddress,
   [ChainId.ASTROCHAIN_SEPOLIA]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.ASTROCHAIN_SEPOLIA].quoterAddress,
+  [ChainId.BIT_TORRENT_MAINNET]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].quoterAddress,
+  [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].quoterAddress,
+  [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].quoterAddress,
+  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].quoterAddress,
+  [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -109,6 +121,13 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].mixedRouteQuoterV1Address,
   [ChainId.GOERLI]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].mixedRouteQuoterV1Address,
+  [ChainId.BIT_TORRENT_MAINNET]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].mixedRouteQuoterV1Address,
+  [ChainId.FANTOM]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].mixedRouteQuoterV1Address,
+  [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].mixedRouteQuoterV1Address,
+  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].mixedRouteQuoterV1Address,
+  [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].mixedRouteQuoterV1Address,
 };
 
 export const MIXED_ROUTE_QUOTER_V2_ADDRESSES: AddressMap = {
@@ -143,6 +162,12 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.WORLDCHAIN].multicallAddress,
   [ChainId.ASTROCHAIN_SEPOLIA]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.ASTROCHAIN_SEPOLIA].multicallAddress,
+  [ChainId.BIT_TORRENT_MAINNET]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].multicallAddress,
+  [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].multicallAddress,
+  [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].multicallAddress,
+  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].multicallAddress,
+  [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -319,6 +344,11 @@ export const WETH9: {
     'WETH',
     'Wrapped Ether'
   ),
+  [ChainId.BIT_TORRENT_MAINNET]: new Token(ChainId.BIT_TORRENT_MAINNET, '0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C', 18, 'WBTT', 'Wrapped Bittorrent'),
+  [ChainId.FANTOM]: new Token(ChainId.FANTOM, '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83', 18, 'WFTM', 'Wrapped Fantom'),
+  [ChainId.EON]: new Token(ChainId.EON, '0xF5cB8652a84329A2016A386206761f455bCEDab6', 18, 'WZEN', 'Wrapped ZEN'),
+  [ChainId.BERA_TESTNET]: new Token(ChainId.BERA_TESTNET, '0x7507c1dc16935B82698e4C63f2746A2fCf994dF8', 18, 'WBERA', 'Wrapped Bera'),
+  [ChainId.SONIC_TESTNET]: new Token(ChainId.SONIC_TESTNET, '0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd', 18, 'WS', 'Wrapped Sonic'),
 };
 
 export const BEACON_CHAIN_DEPOSIT_ADDRESS =

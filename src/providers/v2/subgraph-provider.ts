@@ -39,7 +39,16 @@ type RawV2SubgraphPool = {
 const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
+  [ChainId.FANTOM]:
+    `https://gateway-arbitrum.network.thegraph.com/api/843cb09d23c0017e2a57032663d62e49/subgraphs/id/HyhMfT7gehNHMBmFiExqeg3pDtop9UikjvBPfAXT3b21`,
+  [ChainId.BIT_TORRENT_MAINNET]:
+    'http://btt-spooky.paintswap.finance/subgraphs/name/spookyswapv2-upgraded/',
+  [ChainId.EON]:
+    'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/spookyswap-eon',
+  [ChainId.BERA_TESTNET]: 'https://api.goldsky.com/api/public/project_cl9frwjqo1lwz0hvkb5sb2xo8/subgraphs/spooky-beratestnetv2/1.0.0/gn',
+  [ChainId.SONIC_TESTNET]: 'https://graph.testnet.soniclabs.com/gql/subgraphs/name/RitzyDevUK/spooky-sonic-testnet',
 };
+
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.
 

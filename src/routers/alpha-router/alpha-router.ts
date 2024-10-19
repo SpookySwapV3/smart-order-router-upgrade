@@ -106,7 +106,6 @@ import {
 import { CurrencyAmount } from '../../util/amounts';
 import {
   ID_TO_CHAIN_ID,
-  ID_TO_NETWORK_NAME,
   V2_SUPPORTED,
 } from '../../util/chains';
 import {
@@ -894,8 +893,6 @@ export class AlphaRouter
         new TokenProvider(chainId, this.multicall2Provider)
       );
     this.portionProvider = portionProvider ?? new PortionProvider();
-
-    const chainName = ID_TO_NETWORK_NAME(chainId);
 
     // ipfs urls in the following format: `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/${protocol}/${chainName}.json`;
     if (v2SubgraphProvider) {

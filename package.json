@@ -1,13 +1,13 @@
 {
-  "name": "@uniswap/smart-order-router",
-  "version": "4.7.3",
+  "name": "@spooky-swap-dex/smart-order-router",
+  "version": "2.0.1-nsdk001",
   "description": "Uniswap Smart Order Router",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/smart-order-router.git"
+    "url": "https://github.com/SpookySwapV3/smart-order-router-upgrade.git"
   },
   "license": "GPL",
   "keywords": [],
@@ -18,7 +18,8 @@
     "compile-router": "npx typechain --target ethers-v5 --out-dir src/types/other './node_modules/@uniswap/swap-router-contracts/artifacts/contracts/**/*.json'",
     "compile-narwhal": "npx typechain --target ethers-v5 --out-dir src/types/other './node_modules/@uniswap/narwhal/artifacts/contracts/**/*.json'",
     "compile-external-types": "npx typechain --target ethers-v5 --out-dir src/types/other 'src/abis/**/*.json'",
-    "build": "run-p compile-v4-types compile-v3-types compile-v2-types compile-router compile-narwhal compile-external-types && run-p build:*",
+    "build": "run-p compile-v3-types compile-v2-types compile-router compile-external-types && run-p build:*",
+    "build-original": "run-p compile-v4-types compile-v3-types compile-v2-types compile-router compile-narwhal compile-external-types && run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "fix": "run-s fix:*",

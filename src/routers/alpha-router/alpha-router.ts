@@ -168,6 +168,7 @@ import {
   getV2CandidatePools,
   getV3CandidatePools,
   getV4CandidatePools,
+  mockV4CandidatePools,
   SubgraphPool,
   V2CandidatePools,
   V3CandidatePools,
@@ -2163,6 +2164,8 @@ export class AlphaRouter
           MetricLoggerUnit.Milliseconds
         );
         return candidatePools;
+      }).catch(() => {
+        return undefined
       });
     }
 
@@ -2401,10 +2404,10 @@ export class AlphaRouter
                   percents,
                   quoteCurrency.wrapped,
                   [
-                    v4CandidatePools!,
+                    v4CandidatePools ?? mockV4CandidatePools,
                     v3CandidatePools!,
                     v2CandidatePools!,
-                    crossLiquidityPools,
+                    crossLiquidityPools!,
                   ],
                   tradeType,
                   routingConfig,

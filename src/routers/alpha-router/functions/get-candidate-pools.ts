@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Protocol } from '@uniswap/router-sdk';
 import { ChainId, Currency, Token, TradeType } from '@uniswap/sdk-core';
 import { FeeAmount } from '@uniswap/v3-sdk';
@@ -101,6 +102,7 @@ import { parseFeeAmount } from '../../../util/amounts';
 import { log } from '../../../util/log';
 import { metric, MetricLoggerUnit } from '../../../util/metric';
 import { AlphaRouterConfig } from '../alpha-router';
+import { Pool } from '@uniswap/v4-sdk';
 
 export type SubgraphPool = V2SubgraphPool | V3SubgraphPool | V4SubgraphPool;
 export type CandidatePoolsBySelectionCriteria = {
@@ -424,6 +426,44 @@ export type V4CandidatePools = {
   poolAccessor: V4PoolAccessor;
   candidatePools: CandidatePoolsBySelectionCriteria;
   subgraphPools: V4SubgraphPool[];
+};
+
+export const mockV4CandidatePools: V4CandidatePools = {
+  poolAccessor: {
+    getPool: (
+      _currencyA: Currency,
+      _currencyB: Currency,
+      _fee: number,
+      _tickSpacing: number,
+      _hooks: string
+    ): Pool | undefined => {
+      // Mock function returning undefined
+      return undefined;
+    },
+    getPoolById: (_poolId: string): Pool | undefined => {
+      // Mock function returning undefined
+      return undefined;
+    },
+    getAllPools: (): Pool[] => {
+      // Mock function returning an empty array
+      return [];
+    }
+  },
+  candidatePools: {
+    protocol: Protocol.V4, 
+    selections: {
+      topByBaseWithTokenIn: [],
+      topByBaseWithTokenOut: [],
+      topByDirectSwapPool: [],
+      topByEthQuoteTokenPool: [],
+      topByTVL: [],
+      topByTVLUsingTokenIn: [],
+      topByTVLUsingTokenOut: [],
+      topByTVLUsingTokenInSecondHops: [],
+      topByTVLUsingTokenOutSecondHops: []
+    }
+  },
+  subgraphPools: [] // Empty array of V4SubgraphPool
 };
 
 // TODO: ROUTE-241 - refactor getV3CandidatePools against getV4CandidatePools

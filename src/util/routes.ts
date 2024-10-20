@@ -1,4 +1,4 @@
-import { ADDRESS_ZERO, Protocol } from '@uniswap/router-sdk';
+import { Protocol } from '@uniswap/router-sdk';
 import { TPool } from '@uniswap/router-sdk/dist/utils/TPool';
 import { Currency, Percent } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk';

@@ -554,6 +554,14 @@ export class AlphaRouter
   protected universalRouterVersion?: UniversalRouterVersion;
   protected v4PoolParams?: Array<[number, number, string]>;
 
+  public get V2PoolProvider(): IV2PoolProvider {
+    return this.v2PoolProvider;
+  }
+
+  public get V3PoolProvider(): IV3PoolProvider {
+    return this.v3PoolProvider;
+  }
+
   constructor({
     chainId,
     provider,

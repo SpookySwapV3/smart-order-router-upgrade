@@ -359,7 +359,7 @@ export const WETH9: {
   [ChainId.EON]: new Token(ChainId.EON, '0xF5cB8652a84329A2016A386206761f455bCEDab6', 18, 'WZEN', 'Wrapped ZEN'),
   [ChainId.BERA_TESTNET]: new Token(ChainId.BERA_TESTNET, '0x7507c1dc16935B82698e4C63f2746A2fCf994dF8', 18, 'WBERA', 'Wrapped Bera'),
   [ChainId.SONIC_TESTNET]: new Token(ChainId.SONIC_TESTNET, '0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd', 18, 'WS', 'Wrapped Sonic'),
-  [ChainId.GOAT_TESTNET]: new Token(ChainId.GOAT_TESTNET, '', 18, 'WBTC', 'Wrapped Bitcoin'),
+  [ChainId.GOAT_TESTNET]: new Token(ChainId.GOAT_TESTNET, '0xc9cB60b2635A1e2518B37Cb632C973e54C5AB3fF', 18, 'WBTC', 'Wrapped Bitcoin'),
 };
 
 export const BEACON_CHAIN_DEPOSIT_ADDRESS =

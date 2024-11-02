@@ -53,6 +53,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].v3CoreFactoryAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].v3CoreFactoryAddress,
   [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].v3CoreFactoryAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -88,6 +89,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].quoterAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].quoterAddress,
   [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].quoterAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -115,6 +117,7 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].quoterAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].quoterAddress,
   [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].quoterAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].quoterAddress,
 };
 
 export const PROTOCOL_V4_QUOTER_ADDRESSES: AddressMap = {
@@ -174,6 +177,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].multicallAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].multicallAddress,
   [ChainId.SONIC_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC_TESTNET].multicallAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -355,6 +359,7 @@ export const WETH9: {
   [ChainId.EON]: new Token(ChainId.EON, '0xF5cB8652a84329A2016A386206761f455bCEDab6', 18, 'WZEN', 'Wrapped ZEN'),
   [ChainId.BERA_TESTNET]: new Token(ChainId.BERA_TESTNET, '0x7507c1dc16935B82698e4C63f2746A2fCf994dF8', 18, 'WBERA', 'Wrapped Bera'),
   [ChainId.SONIC_TESTNET]: new Token(ChainId.SONIC_TESTNET, '0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd', 18, 'WS', 'Wrapped Sonic'),
+  [ChainId.GOAT_TESTNET]: new Token(ChainId.GOAT_TESTNET, '', 18, 'WBTC', 'Wrapped Bitcoin'),
 };
 
 export const BEACON_CHAIN_DEPOSIT_ADDRESS =

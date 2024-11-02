@@ -37,6 +37,7 @@ import {
   USDC_BRIDGED_AVAX,
   USDC_CELO,
   USDC_ETHEREUM_GNOSIS,
+  USDC_GOAT_TEST,
   USDC_GOERLI,
   USDC_LZ_EON,
   USDC_LZ_FANTOM,
@@ -139,6 +140,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.EON]: [USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [USDC_BERA_TEST],
   [ChainId.SONIC_TESTNET]: [USDC_SONIC_TEST],
+  [ChainId.GOAT_TESTNET]: [USDC_GOAT_TEST],
 };
 
 export type L1ToL2GasCosts = {

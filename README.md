@@ -355,6 +355,26 @@ quote v2 WSonic -> CORAL
 ./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 64165 --debug
 ```
 
+
+## Sonic Mainnet
+
+
+quote v2 wrapped sonic -> lana
+```
+./bin/cli quote --tokenIn 0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38 --tokenOut 0x980c141a87196e17a50ffcaa2496cfa198d30308  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 146 --debug
+```
+
+quote v2 wrapped sonic -> yoko
+```
+./bin/cli quote --tokenIn 0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38 --tokenOut 0x59524D5667B299c0813Ba3c99a11C038a3908fBC  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 146 --debug
+```
+
+```
+./bin/cli quote --tokenIn 0x59524D5667B299c0813Ba3c99a11C038a3908fBC --tokenOut 0x980c141a87196e17a50ffcaa2496cfa198d30308  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 146 --debug
+```
+
+yoko-lana pair address: 0x1c89c0498473baf87238554e817e3f846aa51f1b
+
 ## TODOS
 
  - add contracts for FEE_DETECTOR_ADDRESS for eon, btt, bear, sonic

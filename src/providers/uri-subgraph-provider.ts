@@ -24,12 +24,10 @@ import { V3SubgraphPool } from './v3/subgraph-provider';
 export function resolveURISubgraph(chainId: ChainId, version: "v2" | "v3" | "v4") {
   const chainName = ID_TO_NETWORK_NAME(chainId);
   const uniswapURIFormat = `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/${version}/${chainName}.json`
-  const spookyURIFormat = `https://spooky.fi/v1/pools/${version}/${chainName}.json`
-  const localURIFormat = `http://localhost:3001/v1/pools/${version}/${chainId}.json`
-  const useLocal = true
+  const spookyURIFormat = `https://chatapi.spooky.fi:3002/v1/pools/${version}/${chainId.toString()}.json`
 
   if(SPOOKY_CHAINS.includes(chainId)) {
-    return useLocal ? localURIFormat : spookyURIFormat;
+    return spookyURIFormat;
   }
 
   return uniswapURIFormat

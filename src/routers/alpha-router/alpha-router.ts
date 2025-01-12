@@ -827,6 +827,8 @@ export class AlphaRouter
         case ChainId.EON:
         case ChainId.BERA_TESTNET:
         case ChainId.SONIC_TESTNET:
+        case ChainId.SONIC:
+        case ChainId.GOAT:
         default:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,

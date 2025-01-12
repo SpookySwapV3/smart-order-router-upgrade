@@ -24,6 +24,8 @@ import {
   DAI_ZKSYNC,
   USDB_BLAST,
   USDCE_ZKSYNC,
+  USDC_GOAT,
+  USDC_SONIC,
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
   USDC_ARBITRUM_SEPOLIA,
@@ -139,6 +141,8 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.EON]: [USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [USDC_BERA_TEST],
   [ChainId.SONIC_TESTNET]: [USDC_SONIC_TEST],
+  [ChainId.SONIC]: [USDC_SONIC],
+  [ChainId.GOAT]: [USDC_GOAT],
 };
 
 export type L1ToL2GasCosts = {

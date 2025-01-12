@@ -870,6 +870,22 @@ export const DAI_SONIC_TEST = new Token(
   'Coral '
 );
 
+export const USDC_SONIC = new Token(
+  ChainId.SONIC,
+  '0x29219dd400f2bf60e5a23d13be72b486d4038894',
+  18,
+  'USDC',
+  'USDC '
+);
+
+export const USDC_GOAT = new Token(
+  ChainId.GOAT,
+  '0x5C5Dc36c98d151D5410eEfc16DBB096F7F99523B',
+  18,
+  'USDC',
+  'USDC '
+);
+
 
 export class TokenProvider implements ITokenProvider {
   constructor(
@@ -1178,6 +1194,10 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BERA_TEST;
     case ChainId.SONIC_TESTNET:
       return USDC_SONIC_TEST;
+    case ChainId.SONIC
+      return USDC_SONIC;
+    case ChainId.GOAT:
+      return USDC_GOAT;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

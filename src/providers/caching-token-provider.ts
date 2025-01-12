@@ -29,6 +29,8 @@ import {
   ITokenProvider,
   TokenAccessor,
   USDB_BLAST,
+  USDC_GOAT,
+  USDC_SONIC,
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
   USDC_ARBITRUM_SEPOLIA,
@@ -216,6 +218,14 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.SONIC_TESTNET] : {
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONIC_TESTNET],
     USDC: USDC_SONIC_TEST,
+  },
+  [ChainId.GOAT] : {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.GOAT],
+    USDC: USDC_GOAT,
+  },
+  [ChainId.SONIC] : {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONIC],
+    USDC: USDC_SONIC,
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

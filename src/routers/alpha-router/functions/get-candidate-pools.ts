@@ -39,6 +39,8 @@ import {
   FEI_MAINNET,
   ITokenProvider,
   USDB_BLAST,
+  USDC_GOAT,
+  USDC_SONIC,
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
   USDC_AVAX,
@@ -260,6 +262,8 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON]!, USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.BERA_TESTNET]!, USDC_BERA_TEST],
   [ChainId.SONIC_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC_TESTNET]!, USDC_SONIC_TEST],
+  [ChainId.SONIC]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC]!, USDC_SONIC],
+  [ChainId.GOAT]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT]!, USDC_GOAT],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {

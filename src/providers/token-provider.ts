@@ -1189,15 +1189,15 @@ export const USDC_ON = (chainId: ChainId): Token => {
     case ChainId.FANTOM:
       return USDC_LZ_FANTOM;
     case ChainId.EON:
-      return USDC_LZ_EON;
+      return USDC_LZ_EON
     case ChainId.BERA_TESTNET:
-      return USDC_BERA_TEST;
+      return USDC_BERA_TEST
     case ChainId.SONIC_TESTNET:
-      return USDC_SONIC_TEST;
-    case ChainId.SONIC
-      return USDC_SONIC;
+      return USDC_SONIC_TEST
+    case ChainId.SONIC:
+      return USDC_SONIC
     case ChainId.GOAT:
-      return USDC_GOAT;
+      return USDC_GOAT
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

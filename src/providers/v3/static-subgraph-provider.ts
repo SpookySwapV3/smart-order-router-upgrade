@@ -267,6 +267,7 @@ export class StaticV3SubgraphProvider implements IV3SubgraphProvider {
           [tokenA, tokenB, FeeAmount.LOWEST],
           [tokenA, tokenB, FeeAmount.LOW],
           [tokenA, tokenB, FeeAmount.MEDIUM],
+          [tokenA, tokenB, FeeAmount.LOWMED],
           [tokenA, tokenB, FeeAmount.HIGH],
         ];
       })

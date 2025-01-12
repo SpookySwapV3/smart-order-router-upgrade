@@ -1,6 +1,6 @@
 {
   "name": "@spooky-swap-dex/smart-order-router",
-  "version": "2.0.1-nsdk011",
+  "version": "2.0.1-nsdk012",
   "description": "Uniswap Smart Order Router",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",

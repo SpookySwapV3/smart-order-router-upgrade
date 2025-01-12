@@ -24,6 +24,8 @@ export function parseFeeAmount(feeAmountStr: string) {
       return FeeAmount.HIGH;
     case '3000':
       return FeeAmount.MEDIUM;
+    case '1400':
+      return FeeAmount.LOWMED;
     case '500':
       return FeeAmount.LOW;
     case '400':
@@ -45,6 +47,8 @@ export function unparseFeeAmount(feeAmount: FeeAmount) {
       return '10000';
     case FeeAmount.MEDIUM:
       return '3000';
+    case FeeAmount.LOWMED:
+        return '1400';
     case FeeAmount.LOW:
       return '500';
     case FeeAmount.LOW_400:
@@ -64,6 +68,7 @@ export function getApplicableV3FeeAmounts(chainId: ChainId): FeeAmount[] {
   const feeAmounts = [
     FeeAmount.HIGH,
     FeeAmount.MEDIUM,
+    FeeAmount.LOWMED,
     FeeAmount.LOW,
     FeeAmount.LOWEST,
   ];
